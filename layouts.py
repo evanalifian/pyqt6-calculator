@@ -1,6 +1,6 @@
 # Impoert PyQt6 Classes and Modules
 from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout
 
 # Import widgets
 from utils.widgets import pushButton, lineEdit
@@ -9,7 +9,7 @@ class CombinationLayout(QMainWindow):
   def __init__(self):
     super().__init__()
 
-    # Create container / VLayout
+    # Create Cntainer / VLayout
     self.vlayout = QVBoxLayout()
     self.container = QWidget()
     self.container.setLayout(self.vlayout)
@@ -57,6 +57,50 @@ class CombinationLayout(QMainWindow):
     self.row6 = QHBoxLayout()
     self.row6.addWidget(pushButton("="))
     self.vlayout.addLayout(self.row6)
+
+  def getLayout(self):
+    return self.container
+
+class GridLayout(QMainWindow):
+  def __init__(self):
+    super().__init__()
+
+    # Create grid box and cointainer
+    self.gridLayout = QGridLayout()
+    self.container = QWidget()
+    self.container.setLayout(self.gridLayout)
+    
+    # Row 1
+    self.lineEdit = lineEdit()
+    self.lineEdit.setFixedHeight(75)
+    self.gridLayout.addWidget(self.lineEdit, 0, 0)
+
+    # Row 2
+    self.gridLayout.addWidget(pushButton("x²", self.lineEdit), 1, 0)
+    self.gridLayout.addWidget(pushButton("1/x", self.lineEdit), 1, 1)
+    self.gridLayout.addWidget(pushButton("√x", self.lineEdit), 1, 2)
+    self.gridLayout.addWidget(pushButton("+", self.lineEdit), 1, 3)
+
+    # Row 3 / HLayout
+    self.gridLayout.addWidget(pushButton("8", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("9", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("C", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("-", self.lineEdit))
+    
+    # Row 4 / HLayout
+    self.gridLayout.addWidget(pushButton("3", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("6", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("7", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("×", self.lineEdit))
+    
+    # Row 5 / HLayout
+    self.gridLayout.addWidget(pushButton("0", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("1", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("2", self.lineEdit))
+    self.gridLayout.addWidget(pushButton("÷", self.lineEdit))
+    
+    # Row 6 / HLayout
+    self.gridLayout.addWidget(pushButton("=", self.lineEdit))
 
   def getLayout(self):
     return self.container
