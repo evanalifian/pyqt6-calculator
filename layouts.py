@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout
 # Import widgets
 from utils.widgets import pushButton, lineEdit
 
-class GridLayout(QMainWindow):
+class CombinationLayout(QMainWindow):
   def __init__(self):
     super().__init__()
 
@@ -58,5 +58,5 @@ class GridLayout(QMainWindow):
     self.row6.addWidget(pushButton("="))
     self.vlayout.addLayout(self.row6)
 
-  def getGridLayout(self):
+  def getLayout(self):
     return self.container

@@ -4,7 +4,7 @@ import sys
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QTabWidget
 
-from layouts import GridLayout
+from layouts import CombinationLayout
 
 # Create a main class from PyQT for main app
 class MainWindow(QMainWindow):
@@ -14,9 +14,9 @@ class MainWindow(QMainWindow):
     self.setWindowTitle("PyQt6 - Calculator")
     self.setFixedSize(QSize(320, 500))
 
-    self.gridLayout = GridLayout()
+    self.combinationLayout = CombinationLayout()
 
-    self.setCentralWidget(self.gridLayout.getGridLayout())
+    self.setCentralWidget(self.combinationLayout.getLayout())
 
 
 
