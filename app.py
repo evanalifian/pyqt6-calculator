@@ -1,6 +1,5 @@
 import sys
 
-# Impoert PyQt6 Classes and Modules
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTabWidget
 
@@ -19,21 +18,9 @@ class MainWindow(QMainWindow):
     self.tabs.setTabPosition(QTabWidget.TabPosition.North)
     self.tabs.setMovable(True)
 
-    # Initiate Layouts
-    self.layouts = [
-      {
-        "name": "Grid Layout",
-        "layout": GridLayout().getLayout()
-      },
-      {
-        "name": "Combination Layout",
-        "layout": CombinationLayout().getLayout()
-      },
-    ]
-
     # Add tab
-    for l in self.layouts:
-      self.tabs.addTab(l["layout"], l["name"])
+    self.tabs.addTab(GridLayout().getLayout(), "Grid Layout")
+    self.tabs.addTab(CombinationLayout().getLayout(), "Combination Layout")
 
     self.setCentralWidget(self.tabs)
 
