@@ -23,9 +23,9 @@ class GridLayout(QMainWindow):
     self.gridLayout.addWidget(self.lineEdit, 0, 0)
 
     # Row 2
-    self.gridLayout.addWidget(advanceMathButton("x²", self.lineEdit, self.mathStack), 1, 0)
-    self.gridLayout.addWidget(advanceMathButton("1/x", self.lineEdit, self.mathStack), 1, 1)
-    self.gridLayout.addWidget(advanceMathButton("√x", self.lineEdit, self.mathStack), 1, 2)
+    self.gridLayout.addWidget(advanceMathButton("x²", self.lineEdit), 1, 0)
+    self.gridLayout.addWidget(advanceMathButton("1/x", self.lineEdit), 1, 1)
+    self.gridLayout.addWidget(advanceMathButton("√x", self.lineEdit), 1, 2)
     self.gridLayout.addWidget(pushButton("+", self.lineEdit, self.mathStack), 1, 3)
 
     # Row 3 / HLayout
@@ -74,9 +74,9 @@ class CombinationLayout(QMainWindow):
 
     # Row 2 / HLayout
     self.row2 = QHBoxLayout()
-    self.row2.addWidget(advanceMathButton("x²", self.lineEdit, self.mathStack))
-    self.row2.addWidget(advanceMathButton("1/x", self.lineEdit, self.mathStack))
-    self.row2.addWidget(advanceMathButton("√x", self.lineEdit, self.mathStack))
+    self.row2.addWidget(advanceMathButton("x²", self.lineEdit))
+    self.row2.addWidget(advanceMathButton("1/x", self.lineEdit))
+    self.row2.addWidget(advanceMathButton("√x", self.lineEdit))
     self.row2.addWidget(pushButton("+", self.lineEdit, self.mathStack))
     self.vlayout.addLayout(self.row2)
     

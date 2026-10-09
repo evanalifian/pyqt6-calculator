@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QPushButton, QLineEdit
 from dsa import Stack
-from utils.slots import pushMathStack, calculate
+from utils.slots import pushMathStack, calculate, squared, multiplicativeInverse, squareRoot
 
 
 # Button element
@@ -17,9 +17,17 @@ def pushButton(title: str, lineEdit: QLineEdit, mathStack: Stack):
   return button
 
 # Advance math operation
-def advanceMathButton(title: str, lineEdit: QLineEdit, mathStack: Stack):
+def advanceMathButton(title: str, lineEdit: QLineEdit):
   button = QPushButton(title)
-  button.clicked.connect(lambda: print("Advance clicked"))
+  title = title.lower()
+  
+  if title == "x²":
+    button.clicked.connect(lambda: squared(int(lineEdit.text()), lineEdit))
+  elif title == "1/x":
+    button.clicked.connect(lambda: multiplicativeInverse(int(lineEdit.text()), lineEdit))
+  elif title == "√x":
+    button.clicked.connect(lambda: squareRoot(int(lineEdit.text()), lineEdit))
+  
   return button
 
 
