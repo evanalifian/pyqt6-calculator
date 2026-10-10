@@ -3,8 +3,8 @@ import sys
 from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtGui import QAction
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTabWidget, QWidget, QVBoxLayout
-from layouts import CombinationLayout, GridLayout
-from dsa import Stack
+from utils.layouts import CombinationLayout, GridLayout
+from utils.dsa import Stack
 from utils.slots import squared, multiplicativeInverse, squareRoot
 from utils.widgets import lineEdit
 

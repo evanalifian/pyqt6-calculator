@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QLineEdit
-from dsa import Stack, evaluate_infix
+from utils.dsa import Stack, evaluate_infix
 
 
 def formatNumber(value: float):

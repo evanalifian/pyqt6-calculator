@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QPushButton, QLineEdit
-from dsa import Stack
+from utils.dsa import Stack
 from utils.slots import pushMathStack, calculate, squared, multiplicativeInverse, squareRoot
 
 

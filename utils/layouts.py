@@ -2,7 +2,7 @@ from PyQt6.QtCore import QSize, Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLineEdit
 
 from utils.widgets import pushButton, advanceMathButton, lineEdit
-from dsa import Stack
+from utils.dsa import Stack
 
 
 # Create Grid Display
