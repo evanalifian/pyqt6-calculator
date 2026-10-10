@@ -1,5 +1,5 @@
 from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QGridLayout, QLineEdit
 
 from utils.widgets import pushButton, advanceMathButton, lineEdit
 from dsa import Stack
@@ -7,20 +7,19 @@ from dsa import Stack
 
 # Create Grid Display
 class GridLayout(QMainWindow):
-  def __init__(self):
+  def __init__(self, lineEdit: QLineEdit, mathStack: Stack):
     super().__init__()
 
-    # Create math stack
-    self.mathStack = Stack()
+    # Line edit dan math stack dipakai bersama (dibuat di MainWindow)
+    self.lineEdit = lineEdit
+    self.mathStack = mathStack
 
     # Create grid box and cointainer
     self.gridLayout = QGridLayout()
     self.container = QWidget()
     self.container.setLayout(self.gridLayout)
     
-    # Row 1
-    self.lineEdit = lineEdit()
-    self.gridLayout.addWidget(self.lineEdit, 0, 0)
+    # Row 1 ada di MainWindow (line edit bersama)
 
     # Row 2
     self.gridLayout.addWidget(advanceMathButton("x²", self.lineEdit), 1, 0)
@@ -55,22 +54,19 @@ class GridLayout(QMainWindow):
 
 # Create Combination Display
 class CombinationLayout(QMainWindow):
-  def __init__(self):
+  def __init__(self, lineEdit: QLineEdit, mathStack: Stack):
     super().__init__()
 
-    # Create math stack
-    self.mathStack = Stack()
+    # Line edit dan math stack dipakai bersama (dibuat di MainWindow)
+    self.lineEdit = lineEdit
+    self.mathStack = mathStack
 
     # Create Cntainer / VLayout
     self.vlayout = QVBoxLayout()
     self.container = QWidget()
     self.container.setLayout(self.vlayout)
 
-    # Row 1 / HLayout
-    self.row1 = QHBoxLayout()
-    self.lineEdit = lineEdit()
-    self.row1.addWidget(self.lineEdit)
-    self.vlayout.addLayout(self.row1)
+    # Row 1 ada di MainWindow (line edit bersama)
 
     # Row 2 / HLayout
     self.row2 = QHBoxLayout()

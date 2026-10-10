@@ -22,11 +22,11 @@ def advanceMathButton(title: str, lineEdit: QLineEdit):
   title = title.lower()
   
   if title == "x²":
-    button.clicked.connect(lambda: squared(int(lineEdit.text()), lineEdit))
+    button.clicked.connect(lambda: squared(lineEdit))
   elif title == "1/x":
-    button.clicked.connect(lambda: multiplicativeInverse(int(lineEdit.text()), lineEdit))
+    button.clicked.connect(lambda: multiplicativeInverse(lineEdit))
   elif title == "√x":
-    button.clicked.connect(lambda: squareRoot(int(lineEdit.text()), lineEdit))
+    button.clicked.connect(lambda: squareRoot(lineEdit))
   
   return button
 
